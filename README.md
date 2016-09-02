@@ -82,6 +82,7 @@ This initializes the Volume2 library after import. "vol" can be any word you wan
 - `TRIANGLE` / `TRIANGLE_HIGH` | Triangle wave, low and high quality
 - `SINE` / `SINE_HIGH` | Sine wave, low and high quality
 - `CUSTOM` | Custom 32-byte array defined by the user for custom voices
+- `NOISE` | Ignores **frequency**, returns volume controlled RNG
 
 This high-speed PWM is beyond your range of hearing, (and probably the functioning range of your speaker) so it will just sound like a quieter or louder version of the input frequency.
 
