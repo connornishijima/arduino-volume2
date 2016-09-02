@@ -82,7 +82,6 @@ This initializes the Volume2 library after import. "vol" can be any word you wan
 - `TRIANGLE` / `TRIANGLE_HIGH` | Triangle wave, low and high quality
 - `SINE` / `SINE_HIGH` | Sine wave, low and high quality
 - `CUSTOM` | Custom 32-byte array defined by the user for custom voices
-- `NOISE` | Returns volume-controlled white noise - **frequency** unused
 
 This high-speed PWM is beyond your range of hearing, (and probably the functioning range of your speaker) so it will just sound like a quieter or louder version of the input frequency.
 
@@ -145,7 +144,11 @@ Speaking of Timer0 - it's normally used for the `delay()`, `delayMicroseconds()`
 
 **Volume2 does not yet offer fixed millis() or micros() functions:**
 
-I haven't gotten around to toying with these yet. If you need to use `millis()` or `micros()` BETWEEN playing sounds, just use a `vol.noTone()` to reset Timer0 to it's default function, and `vol.tone()` to use it for Volume2 again after you're done.~~
+I haven't gotten around to toying with these yet. If you need to use `millis()` or `micros()` BETWEEN playing sounds, just use a `vol.noTone()` to reset Timer0 to it's default function, and `vol.tone()` to use it for Volume2 again after you're done.
+
+**Volume2 has frequency limitations:**
+
+If you're using `SQUARE`, `PWM_12` or `PWM_25`, the sound will be crisp anywhere from 1-3,000 Hz. With `SAWTOOTH`, `TRIANGLE` and `SINE` however, lower frequencies will sound a bit dodgy. For frequencies under 400 Hz, I reccomend using `[type]_HIGH` instead, as these voices use a 64-byte lookup table for generation, opposed to the default 16-byte ones.
 
 ----------
 # Contributing
