@@ -16,7 +16,7 @@ setCustomWave KEYWORD2
 getCustomSample KEYWORD2
 delay KEYWORD2
 millis  KEYWORD2
-vol	KEYWORD2
+vol KEYWORD2
 Volume  KEYWORD2
 
 ###################################
