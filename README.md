@@ -53,7 +53,6 @@ Volume2 audio is limited to certain pins. See [Supported Pins](#supported-pins).
 Here is what you need to get started with the bare minimum:
 
     #include "volume2.h"
-
     Volume vol;
     
     void setup() {
