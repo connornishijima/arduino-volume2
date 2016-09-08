@@ -52,10 +52,9 @@ Volume2 audio is limited to certain pins. See [Supported Pins](#supported-pins).
 ----------
 Here is what you need to get started with the bare minimum:
 
-    #include "volume2.h" // Include the Volume2 library
+    #include "volume2.h"
 
-    Volume vol; // Plug your speaker into the default pin for your board type:
-    // https://github.com/connornishijima/arduino-volume-2#supported-pins
+    Volume vol;
     
     void setup() {
       vol.tone(440, SAWTOOTH_HIGH, 64); // Sawtooth at 440 Hz, 25% Volume
