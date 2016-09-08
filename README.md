@@ -24,7 +24,7 @@ Using this technique, we can produce many waveforms like sines, triangles and sa
 ----------
 # Installation
 
-**With Arduino Library Manager:** (Coming soon!)
+**With Arduino Library Manager:**
 
 1. Open *Sketch > Include Library > Manage Libraries* in the Arduino IDE.
 2. Search for "Volume2", (look for "Connor Nishijima") and select the latest version.
