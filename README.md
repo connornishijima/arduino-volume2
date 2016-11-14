@@ -18,6 +18,7 @@ Using this technique, we can produce many waveforms like sines, triangles and sa
 - [Functions](#functions)
 - [Supported Pins](#supported-pins)
 - [Limitations](#limitations)
+- [Volume Library Comparison](#volume-library-comparison)
 - [Contributing](#contributing)
 - [License and credits](#license-and-credits)
 
@@ -148,6 +149,29 @@ I haven't gotten around to toying with these yet. If you need to use `millis()` 
 **Volume2 has frequency limitations:**
 
 If you're using `SQUARE`, `PWM_12` or `PWM_25`, the sound will be crisp anywhere from 1-3,000 Hz. With `SAWTOOTH`, `TRIANGLE` and `SINE` however, lower frequencies will sound a bit dodgy. For frequencies under 400 Hz, I reccomend using `[type]_HIGH` instead, as these voices use a 64-byte lookup table for generation, opposed to the default 16-byte ones.
+
+----------
+# Volume Library Comparison
+
+Now that there are three separately-developed Volume libraries, here is a table delineating their abilities. One will be good for higher frequencies, one will do custom waves, one will have higher volume accuracy, and so forth. Eventually I'm looking to merge them, but for now each has it's strengths and weaknesses.
+
+| Library                       | **Volume1** | **Volume2** | **Volume3**   |
+|-------------------------------|-------------|-------------|---------------|
+| Accuracy                      | 8-bit (255) | 8-bit (255) | 10-bit (1023) |
+| Frequency Range (Hz)          | 120 - 5000  | 1 - 3400    | 1 - 4186      |
+| PWM Frequency (Hz)            | 62,500      | 62,500      | 100,000       |
+| Polyphony                     | 1           | 1           | 1             |
+| Needs vol.begin()             | YES         | YES         | NO            |
+| Compiled Library Size (Bytes) | 2,501       | 2,542       | 1,054         |
+| Ram Usage (Bytes)             | 39          | 457         | 24            |
+| Frequency Slide Quality       | GREAT       | BAD         | GOOD          |
+| Timer Usage                   | 0, 1        | 0, 1        | 1             |
+| Delay Issue (Timer0 Prescaler)| YES         | YES         | NO            |
+| Square Wave                   | YES         | YES         | YES           |
+| Sawtooth Wave                 | NO          | YES         | NO            |
+| Triangle Wave                 | NO          | YES         | NO            |
+| Sine Wave                     | NO          | YES         | NO            |
+| Custom Wave                   | NO          | YES         | NO            |
 
 ----------
 # Contributing
