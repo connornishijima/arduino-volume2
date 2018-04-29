@@ -9,7 +9,7 @@
 uint8_t voiceEnabled = false;
 uint8_t voiceType; // can be SINE, SQUARE, PWM_12, etc.
 uint8_t val; // Current output level
-uint32_t toneMillis; // Used to compute millis() when Timer0 is 64x fast
+volatile uint32_t toneMillis; // Used to compute millis() when Timer0 is 64x fast
 
 uint8_t toneTable[16];
 uint8_t toneIndex;
