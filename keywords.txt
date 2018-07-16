@@ -10,14 +10,14 @@
 # Methods and Functions (KEYWORD2)
 ###################################
 
-tone  KEYWORD2
-noTone  KEYWORD2
-setCustomWave KEYWORD2
-getCustomSample KEYWORD2
-delay KEYWORD2
-millis  KEYWORD2
-vol KEYWORD2
-Volume  KEYWORD2
+tone	KEYWORD2
+noTone	KEYWORD2
+setCustomWave	KEYWORD2
+getCustomSample	KEYWORD2
+delay	KEYWORD2
+millis	KEYWORD2
+vol	KEYWORD2
+Volume	KEYWORD2
 
 ###################################
 # Constants (LITERAL1)
